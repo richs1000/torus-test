@@ -28,7 +28,7 @@ document.querySelector('.btn').addEventListener("click", clickDemo)
 
 function clickDemo() {
     console.log("Hi there")
-    model.set('mastery', model.mastery);
+    model.set('mastery', true);
     alert("Congratulations! You're ready to move on. Press the NEXT button to advance to the next slide.");
     simcapi.Transporter.triggerCheck();
 }
