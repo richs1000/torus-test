@@ -24,7 +24,7 @@ function achievedMastery(mastery) {
 document.querySelector('.btn').addEventListener("click", clickDemo)
 
 function clickDemo() {
-    console.log("Hi there")
+    console.log("v0.0.3")
     model.set('mastery', true);
     simcapi.CapiAdapter.expose('mastery', model);
     // alert("Congratulations! You're ready to move on. Press the NEXT button to advance to the next slide.");
