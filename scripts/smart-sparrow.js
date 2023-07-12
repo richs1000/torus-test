@@ -13,9 +13,6 @@ simcapi.CapiAdapter.expose('denominator', model);
 simcapi.CapiAdapter.expose('implementMastery', model);
 simcapi.CapiAdapter.expose('debug', model);
 
-// Tells pipit that the sim model is ready
-simcapi.Transporter.notifyOnReady();
-
 var node = document.getElementById('my-thing');
 
 function achievedMastery(mastery) {
@@ -29,9 +26,13 @@ document.querySelector('.btn').addEventListener("click", clickDemo)
 function clickDemo() {
     console.log("Hi there")
     model.set('mastery', true);
-    alert("Congratulations! You're ready to move on. Press the NEXT button to advance to the next slide.");
+    simcapi.CapiAdapter.expose('mastery', model);
+    // alert("Congratulations! You're ready to move on. Press the NEXT button to advance to the next slide.");
     simcapi.Transporter.triggerCheck();
 }
+
+// Tells pipit that the sim model is ready
+simcapi.Transporter.notifyOnReady();
 
 
 
